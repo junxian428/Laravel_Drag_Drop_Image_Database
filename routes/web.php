@@ -23,6 +23,7 @@ Route::get('/image_upload', function () {
     return view('image_upload');
 });
 
+
 //Route::post('/addProduct/store',[  // define your self
     //'uses'=>'App\Http\Controllers\ProductController@store',
     //'as'=>'addProduct.store'    // check the charactor when you copy paste from PPT
