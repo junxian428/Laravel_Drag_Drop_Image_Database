@@ -20,3 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('multiple-image-upload', [MultipleUploadController::class, 'upload']);
+
+
+Route::get('/PhotoAPI',[App\Http\Controllers\ImageAPIController::class, 'index']);
