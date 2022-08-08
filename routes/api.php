@@ -23,3 +23,5 @@ Route::post('multiple-image-upload', [MultipleUploadController::class, 'upload']
 
 
 Route::get('/PhotoAPI',[App\Http\Controllers\ImageAPIController::class, 'index']);
+
+Route::get('/RedisImage/{id}',[App\Http\Controllers\RedisImageController::class, 'index']);
