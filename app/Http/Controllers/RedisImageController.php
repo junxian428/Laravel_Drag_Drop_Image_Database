@@ -9,12 +9,11 @@ class RedisImageController extends Controller
 {
     public function index($id) {
 
-        $cachedBlog = Redis::get('redis_images_' . $id);
+        $cachedBlog = Redis::get('select * from redis_images where ' . 'redis_images_' . $id);
       
       
         if(isset($cachedBlog)) {
-            $blog = json_decode($cachedBlog, FALSE);
-      
+            $blog = utf8_decode($cachedBlog);
             return response()->json([
                 'status_code' => 201,
                 'message' => 'Fetched from redis',

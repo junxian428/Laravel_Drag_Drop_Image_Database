@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //use App\Models\UploadImage;
 use App\Models\photophoto;
 use Illuminate\Support\Facades\Input;
+use App\Models\RedisImage;
 
 class ImageController extends Controller
 {
@@ -33,6 +34,10 @@ class ImageController extends Controller
         //print($imageName);
      
         $create= photophoto::create([ 
+            'image'=>$base64,
+        ]);
+        
+        $create_for_api = RedisImage::create([         
             'image'=>$base64,
         ]);
 
